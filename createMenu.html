@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="nav"> </div>
+<script>
+    function createMenu(json) {
+        let result = "";
+
+        let  data = JSON.parse(json);
+
+        result += "<ul>";
+
+        for (let key in data)
+        {
+            result += '<li>' + key + ' ' + data[0] + '</li>';
+        }
+
+        // iets met loop door array data met objecten
+        // iets met <li> title uit het object en </li>
+        result += "</ul>";
+        return result;
+        // document.getElementById('nav').innerHTML = result;
+    }
+        createMenu([{
+        "title": "home",
+        "url" : "/"
+        },
+        {
+            "title" : "producten",
+            "url" : "/producten/"
+        },
+        {
+            "title": "Over ons","url" : "/overons/"
+        },
+        {
+            "title": "contact","url" : "/contact/"
+        }]);
+
+</script>
+</body>
+</html>
